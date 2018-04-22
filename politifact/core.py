@@ -1,6 +1,6 @@
 from hammock import Hammock
 
-from politifact.models import statements_schema
+from politifact.schemas import statements_schema
 
 
 class Person():
