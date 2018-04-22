@@ -16,6 +16,11 @@ class PersonSchema(Schema):
     party = fields.Nested(PartySchema)
 
 
+class SubjectsSchema(Schema):
+    subject_slug = fields.Str()
+    subject = fields.Str()
+
+
 class StatementSchema(Schema):
     statement_date = fields.Str()
     statement = fields.Str()
@@ -36,3 +41,5 @@ class StatementSchema(Schema):
 
 statements_schema = StatementSchema(many=True)
 statement_schema = StatementSchema()
+
+subjects_schema = SubjectsSchema(many=True)

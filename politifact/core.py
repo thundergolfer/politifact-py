@@ -1,6 +1,8 @@
 from hammock import Hammock
 
-from politifact.schemas import statements_schema
+from politifact.schemas import statements_schema, subjects_schema
+from politifact.util import parse_name_str, slugify
+from politifact.rulings import Ruling
 
 
 class Person():
@@ -19,18 +21,25 @@ class StatementsEndpoint():
         self.root = root.statements(Politifact.EDITION)
 
     def people(self, name, n=None):
-        first_name, second_name = name.lower().split()
-        person_slug = '{}-{}'.format(first_name, second_name)
+        first_name, second_name = parse_name_str(name)
+        person_slug = slugify(first_name, second_name)
         resp = self.root.people(person_slug).json().GET()
         stmts = resp.json()
-        # return [statement_schema.load(elem).data for elem in stmts]
         return statements_schema.load(stmts).data
 
     def rulings(self, ruling, n=None):
-        return self.root.rulings(ruling).json().GET()
+        if not isinstance(ruling, Ruling):
+            raise ValueError("'ruling' parameter must be instance of {}".format(Ruling))
+        resp = self.root.rulings(ruling).json().GET()
+        stmts = resp.json()
+        return statements_schema.load(stmts).data
 
     def detail(self, id):
-        # TODO: check id is an int
+        try:
+            id = int(id)
+        except ValueError:
+            raise ValueError('must provide the integer ID of a statement')
+
         return self.root.detail(id).json().GET()
 
 
@@ -56,6 +65,17 @@ class UpdatesEndpoint():
             return getattr(self.root, group_name)().subjects(subject).json().GET()
 
 
+class SubjectsEndpoint():
+    def __init__(self, politifact):
+        self.politifact = politifact
+
+    def all(self):
+        resp = self.politifact.root.subjects().all().json().GET()
+        data = resp.json()
+
+        return subjects_schema.load(data).data
+
+
 class Politifact():
     API_ROOT = 'http://www.politifact.com/api'
     EDITION = 'truth-o-meter'
@@ -77,3 +97,6 @@ class Politifact():
 
     def updates(self):
         return UpdatesEndpoint(self.API_ROOT)
+
+    def subjects(self):
+        return SubjectsEndpoint(self)
