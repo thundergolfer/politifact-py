@@ -1,0 +1,4 @@
+[
+  "tests/integration/core_test.py::TestPolitifact::()::test_one_equals_one",
+  "tests/integration/core_test.py::TestPolitifact::()::test_statements_by_person"
+]

@@ -7,6 +7,9 @@ name = "pypi"
 
 [packages]
 
+hammock = "*"
+marshmallow = "*"
+pytest = "*"
 
 
 [dev-packages]
