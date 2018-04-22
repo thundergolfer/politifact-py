@@ -1,6 +1,6 @@
 
 
-# Politifact-py
+# Politifact-Py
 
 #####  **NOTE:** *This API Wrapper was hastily created to facilitate another high-priority project. It is still under active development and may be pretty ugly and wonky.*
 
