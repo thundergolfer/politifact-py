@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
   name='politifact',
-  packages=['politifact'], # this must be the same as the name above
+  packages=['politifact'],
   version='0.1',
   description='A REST API wrapper for the Pulitzer Prize winning Politifact',
   author='Jonathon Belotti',
