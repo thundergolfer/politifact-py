@@ -37,6 +37,13 @@ for statement in obama_related:
 
 `pip install politifact`
 
+
+## Documentation
+
+> **NOTE**: Work in progres...
+
+See https://readthedocs.org/projects/politifact-py/.
+
 ## Development
 
 #### Dependencies
