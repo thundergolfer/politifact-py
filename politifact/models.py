@@ -25,3 +25,13 @@ class Statement():
         self.ruling = ruling
         self.statement_url = statement_url
         self.subjects = subjects
+
+
+class Ruling():
+    def __init__(self, name, slug, graphic):
+        self.name = name
+        self.slug = slug
+        self.graphic = graphic
+
+    def __str__(self):
+        return self.name

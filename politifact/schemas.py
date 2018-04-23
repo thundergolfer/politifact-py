@@ -1,13 +1,21 @@
 from marshmallow import Schema, fields, post_load
 
 from politifact.rulings import map_ruling_slug_to_ruling
-from politifact.models import Statement
+from politifact.models import Statement, Ruling
 
 
 class RulingSchema(Schema):
     ruling = fields.Str()
     ruling_slug = fields.Str()
     canonical_ruling_graphic = fields.URL()
+
+    @post_load
+    def make_ruling(self, data):
+        return Ruling(
+            data['ruling'],
+            data['ruling_slug'],
+            data['canonical_ruling_graphic']
+        )
 
 
 class PartySchema(Schema):

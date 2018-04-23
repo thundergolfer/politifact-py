@@ -1,10 +1,4 @@
-
-class Ruling():
-    def __init__(self, name, slug, graphic):
-        self.name = name
-        self.slug = slug
-        self.graphic = graphic
-
+from politifact.models import Ruling
 
 PANTS_ON_FIRE = Ruling(
     'Pants on Fire!',
