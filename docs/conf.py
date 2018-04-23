@@ -93,7 +93,7 @@ html_theme_options = {
     'github_repo': 'politifact-py',
     'github_banner': True,
     'github_type': 'star',
-    'donate_url': 'paypal.me/JonathonBelotti',
+    # 'donate_url': 'paypal.me/JonathonBelotti',
     'code_font_size': '0.8em',
     'warn_bg': '#FFC',
     'warn_border': '#EEE',
