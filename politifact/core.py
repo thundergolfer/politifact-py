@@ -1,6 +1,7 @@
 from hammock import Hammock
 
-from politifact.schemas import statements_schema, subjects_schema, persons_schema, rulings_schema
+from politifact.schemas import statements_schema, statement_schema
+from politifact.schemas import subjects_schema, persons_schema, rulings_schema
 from politifact.util import parse_name_str, slugify
 from politifact.rulings import Ruling
 
@@ -40,7 +41,12 @@ class StatementsEndpoint():
         except ValueError:
             raise ValueError('must provide the integer ID of a statement')
 
-        return self.root.detail(id).json().GET()
+        resp = self.root.detail(id).json().GET()
+        stmts = resp.json()
+        if not stmts:
+            return None
+        stmt = stmts[0]
+        return statement_schema.load(stmt).data
 
 
 class PromisesEndpoint():
