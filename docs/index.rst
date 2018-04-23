@@ -3,14 +3,23 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Politifact-Py's documentation!
-=========================================
+ ********************************************
+ politifact-py: Politifact REST API Wrapper
+ ********************************************
+
+ Release v\ |version|. (:ref:`Changelog <changelog>`)
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+ API Reference
+ =============
 
+ .. toctree::
+     :maxdepth: 2
+
+     api_reference
 
 Indices and tables
 ==================
