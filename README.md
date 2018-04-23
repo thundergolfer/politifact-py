@@ -1,6 +1,6 @@
 
 
-# Politifact-Py [![Documentation Status](https://readthedocs.org/projects/politifact-py/badge/?version=latest)](http://politifact-py.readthedocs.io/en/latest/?badge=latest)
+# Politifact-Py [![Documentation Status](https://readthedocs.org/projects/politifact-py/badge/?version=latest)](http://politifact-py.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/thundergolfer/politifact-py.svg?branch=master)](https://travis-ci.org/thundergolfer/politifact-py)
 
 #####  **NOTE:** *This API Wrapper was hastily created to facilitate another high-priority project. It is still under active development and may be pretty ugly and wonky.*
 
