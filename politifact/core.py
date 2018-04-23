@@ -6,17 +6,6 @@ from politifact.util import parse_name_str, slugify
 from politifact.rulings import Ruling
 
 
-class Person():
-    def __init__(self, politifact, firstname, lastname):
-        self.politifact = politifact
-        self.firstname = firstname
-        self.lastname = lastname
-
-    @property
-    def slug(self):
-        return self.firstname + '-' + self.lastname
-
-
 class StatementsEndpoint():
     def __init__(self, root):
         self.root = root.statements(Politifact.EDITION)
