@@ -15,7 +15,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+from collections import OrderedDict
 
 # -- Project information -----------------------------------------------------
 
@@ -43,6 +43,8 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
 ]
+
+issues_github_path = 'thundergolfer/politifact-py'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -83,7 +85,33 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'logo': 'politifact-py-logo.png',
+    'description': 'REST API Wrapper for the Politifact Organisation\'s public API.',
+    'description_font_style': 'italic',
+    'github_user': 'thundergolfer',
+    'github_repo': 'politifact-py',
+    'github_banner': True,
+    'github_type': 'star',
+    'donate_url': 'paypal.me/JonathonBelotti',
+    'code_font_size': '0.8em',
+    'warn_bg': '#FFC',
+    'warn_border': '#EEE',
+    # Used to populate the useful-links.html template
+    'extra_nav_links': OrderedDict([
+        ('politifact-py @ PyPI', 'https://pypi.org/project/politifact/'),
+        ('politifact-py @ GitHub', 'http://github.com/thundergolfer/politifact-py'),
+        ('Issue Tracker', 'http://github.com/thundergolfer/politifact-py/issues'),
+    ])
+}
+
+html_sidebars = {
+    'index': [
+        'about.html', 'useful-links.html', 'searchbox.html',
+    ],
+    '**': ['about.html', 'useful-links.html',
+           'localtoc.html', 'relations.html', 'searchbox.html']
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
