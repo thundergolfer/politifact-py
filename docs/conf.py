@@ -86,7 +86,7 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'logo': 'politifact-py-logo.png',
+    'logo': 'politifact-py-logo.jpeg',
     'description': 'REST API Wrapper for the Politifact Organisation\'s public API.',
     'description_font_style': 'italic',
     'github_user': 'thundergolfer',
