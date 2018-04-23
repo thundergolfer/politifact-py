@@ -42,7 +42,7 @@ for statement in obama_related:
 
 > **NOTE**: Work in progres...
 
-See https://readthedocs.org/projects/politifact-py/.
+See http://politifact-py.readthedocs.io/en/latest/.
 
 ## Development
 
