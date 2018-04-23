@@ -4,6 +4,12 @@ from politifact.rulings import map_ruling_slug_to_ruling
 from politifact.models import Statement
 
 
+class RulingSchema(Schema):
+    ruling = fields.Str()
+    ruling_slug = fields.Str()
+    canonical_ruling_graphic = fields.URL()
+
+
 class PartySchema(Schema):
     party = fields.Str()
     party_slug = fields.Str()
@@ -43,3 +49,5 @@ statements_schema = StatementSchema(many=True)
 statement_schema = StatementSchema()
 
 subjects_schema = SubjectsSchema(many=True)
+persons_schema = PersonSchema(many=True)
+rulings_schema = RulingSchema(many=True)
